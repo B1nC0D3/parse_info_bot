@@ -31,3 +31,4 @@ async def upload_file(message: Message, state: FSMContext):
             f'Ссылка: {url[counter]} \n'
             f'Xpath: {xpath[counter]} \n')
         add_item(name[counter], url[counter], xpath[counter])
+    await state.finish()
