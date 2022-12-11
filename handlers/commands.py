@@ -1,6 +1,7 @@
 from aiogram.dispatcher import FSMContext
 from aiogram.types import Message
 
+from keys.keys import keyboard
 from states.states import UploadFile
 
 
@@ -8,7 +9,8 @@ async def start(message: Message):
     await message.answer(
         'Это бот записывающий информацию '
         'из Excel-документа в базу данных, '
-        'для отправки файла выполните /upload')
+        'для отправки файла выполните /upload',
+        reply_markup=keyboard)
 
 
 async def help(message: Message):

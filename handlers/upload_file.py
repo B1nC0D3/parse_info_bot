@@ -12,7 +12,6 @@ async def upload_file(message: Message, state: FSMContext):
     if not re.match(r'.*.xls*', file_name):
         await message.answer('Загрузите Excel-файл')
         return
-    await message.answer(f'{message.document.file_name}')
     await message.document.download(destination_file='documents/tmp.xls')
     try:
         file_data = get_file_data('documents/tmp.xls')
